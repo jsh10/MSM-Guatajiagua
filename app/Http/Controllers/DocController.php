@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Doc;
 
 class DocController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:ver-doc | crear-doc | editar-doc | borrar-doc')->only('index');
+        $this->middleware('permission:crear-doc', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editar-doc', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:borrar-doc', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class DocController extends Controller
      */
     public function index()
     {
-        //
+        $docs = Doc::paginate(5);
+        return view('docs.index', compact('docs'));
     }
 
     /**
@@ -23,7 +32,7 @@ class DocController extends Controller
      */
     public function create()
     {
-        //
+        return view('docs.crear');
     }
 
     /**
@@ -34,7 +43,12 @@ class DocController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'titulo' => 'required',
+            'doc_path' => 'required'
+        ]);
+        Doc::create($request->all());
+        return redirect()->route('doc.index');
     }
 
     /**
@@ -54,9 +68,9 @@ class DocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Doc $doc)
     {
-        //
+        return view('docs.editar', compact('doc'));
     }
 
     /**
@@ -66,9 +80,15 @@ class DocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Doc $doc)
     {
-        //
+        request()->validate([
+            'titulo' => 'required',
+            'doc_path' => 'required'
+        ]);
+
+        $doc->update($request->all());
+        return redirect()->route('doc.index');
     }
 
     /**
@@ -77,8 +97,9 @@ class DocController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Doc $doc)
     {
-        //
+        $doc->delete();
+        return redirect() - route('doc.index');
     }
 }
