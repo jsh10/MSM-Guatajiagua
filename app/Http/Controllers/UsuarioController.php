@@ -34,7 +34,7 @@ class UsuarioController extends Controller
     {
         //
         $roles = Role::pluck('name', 'name')->all();
-        return view('usuarios.create', compact('roles'));
+        return view('usuarios.crear', compact('roles'));
     }
 
     /**
@@ -100,7 +100,7 @@ class UsuarioController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
             'roles' => 'required'
         ]);

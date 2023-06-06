@@ -9,7 +9,7 @@ class DocController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:ver-doc | crear-doc | editar-doc | borrar-doc')->only('index');
+        $this->middleware('permission:ver-doc|crear-doc|editar-doc|borrar-doc')->only('index');
         $this->middleware('permission:crear-doc', ['only' => ['create', 'store']]);
         $this->middleware('permission:editar-doc', ['only' => ['edit', 'update']]);
         $this->middleware('permission:borrar-doc', ['only' => ['destroy']]);
@@ -100,6 +100,6 @@ class DocController extends Controller
     public function destroy(Doc $doc)
     {
         $doc->delete();
-        return redirect() - route('doc.index');
+        return redirect()->route('doc.index');
     }
 }
