@@ -1,0 +1,318 @@
+/* Navbar */
+nav {
+  background: linear-gradient(#0f6bc2, #05aaeb) local;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+
+}
+
+nav li a {
+  display: block;
+  color: gray ;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none !important;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px rgba(51, 19, 192, 0.4);
+}
+
+nav li a:hover:not(.active) {
+  background-color: #64dfa5;
+  color: #444343;
+  transition: all 0.5s ease-in;
+  border-radius: 50px;
+}
+
+nav .active {
+  background-color: #64dfa5;
+  border-radius: 25px;
+}
+
+nav li.right {
+  float: right;
+}
+
+
+
+
+/* Bienvenida */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #4e4e4e 0%, #646464 100%);
+  color: black ;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #dddddd;
+}
+
+.welcome-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.welcome-image {
+  flex: 1;
+  text-align: center;
+}
+
+.welcome-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.welcome-description {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.welcome-description h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.welcome-description p {
+  font-size: 16px;
+  color: #525252;
+}
+
+
+/* Spot */
+.advertisement {
+  text-align: center;
+  background-color: #fdcd4ae0;
+  color: #474747;
+  padding: 40px;
+}
+
+.advertisement h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.advertisement p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.advertisement a {
+  display: inline-block;
+
+  color: #494949;
+  padding: 10px 20px;
+  text-decoration: none;
+
+
+}
+
+
+
+/* Footer */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex-basis: 30%;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  padding-left: 1.5%;
+}
+
+.footer-column h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #555;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+}
+
+
+/* Tarjetas */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.card {
+  display: block;
+  justify-content: center;
+  width: 200px;
+  margin: 0 10px;
+  border: 25px solid #1183ec;
+  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  background-color: #444343;
+  color: white;
+  border-radius: 25px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover{
+  translate: 10px 5px 0px;
+  transition: all 0.5s ease-in-out;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Contacto */
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  height: auto;
+  flex-direction: column;
+}
+
+.container-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  height: auto;
+  flex-direction: row;
+}
+
+.container-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.contact-form {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 50%;
+  padding: 8vh;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 25%;
+  padding: 10px;
+  background: linear-gradient(45deg, #81e9a3, #56e0ce);
+  color: #4d4d4d;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  background: linear-gradient(45deg, #96ffb9, #68f5e2);
+  border-radius: 50px;
+  transition: all 0.5s ease;
+}
+
+.main-container {
+  margin-bottom: 50px;
+}
